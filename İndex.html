@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galata Kulesi Bilgilendirme</title>
+  <style>
+    body { font-family: Arial; margin: 0; padding: 0; text-align: center; background: #f3f3f3; }
+    .container { padding: 20px; }
+    select { padding: 10px; font-size: 16px; margin-bottom: 15px; }
+    .card { background: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    img { width: 100%; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Galata Kulesi</h2>
+    <select id="lang" onchange="changeLang()">
+      <option value="tr">Türkçe</option>
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+    </select>
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Galata_Tower_in_March_2020.jpg/330px-Galata_Tower_in_March_2020.jpg"/>
+      <p id="text"></p>
+    </div>
+  </div>
+
+  <script>
+    const data = {
+      tr: "Galata Kulesi, İstanbul’un Beyoğlu semtinde yer alan tarihi bir kuledir. Bizans İmparatoru Justinianos tarafından 528 yılında inşa edilmiştir.",
+      en: "Galata Tower is a historic tower located in Beyoğlu, Istanbul. It was built in 528 by Byzantine Emperor Justinianus.",
+      ar: "برج غالاتا هو برج تاريخي يقع في منطقة بيوغلو في إسطنبول. بُني عام 528 على يد الإمبراطور البيزنطي جستنيان."
+    };
+
+    function changeLang() {
+      const lang = document.getElementById("lang").value;
+      document.getElementById("text").innerHTML = data[lang];
+    }
+
+    changeLang();
+  </script>
+</body>
+</html>
